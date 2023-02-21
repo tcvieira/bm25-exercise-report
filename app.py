@@ -1,11 +1,8 @@
-import os
 import pickle
 import time
 import streamlit as st
 from rank_bm25 import BM25Okapi, BM25Plus
 from bm25Simple import BM25Simple
-
-path = os.path.dirname(__file__)
 
 
 def main():
