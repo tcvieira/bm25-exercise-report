@@ -1,9 +1,12 @@
+import os
 import pickle
 import time
 import streamlit as st
 from rank_bm25 import BM25Okapi, BM25Plus
 from bm25Simple import BM25Simple
 
+path = os.path.dirname(__file__)
+print(path)
 
 def main():
 
@@ -130,7 +133,7 @@ def load_docs():
     doc_set = {}
     doc_id = ""
     doc_text = ""
-    with open('content/CISI.ALL') as f:
+    with open(path + '/content/CISI.ALL') as f:
         lines = ""
         for l in f.readlines():
             lines += "\n" + l.strip() if l.startswith(".") else " " + l.strip()
@@ -150,15 +153,15 @@ def load_docs():
 
 @st.cache_resource
 def load_models():
-    with open('models/BM25_simple.pkl', 'rb') as file:
+    with open(path + '/models/BM25_simple.pkl', 'rb') as file:
         bm25_simple: BM25Simple = pickle.load(file)
         print(bm25_simple.corpus_size)
 
-    with open('models/BM25OKapi.pkl', 'rb') as file:
+    with open(path + '/models/BM25OKapi.pkl', 'rb') as file:
         bm25_okapi: BM25Okapi = pickle.load(file)
         print(bm25_okapi.corpus_size)
 
-    with open('models/BM25Plus.pkl', 'rb') as file:
+    with open(path + '/models/BM25Plus.pkl', 'rb') as file:
         bm25_plus: BM25Plus = pickle.load(file)
         print(bm25_plus.corpus_size)
 
