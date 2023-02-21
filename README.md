@@ -10,7 +10,7 @@ A brief [report](report.md) describing the implementation details, results, how 
 
 Jupyter notebook with all the associated functions and libraries, with the code for the IR system.
 
-[![google colab link](https://colab.research.google.com/assets/colab-badge.svg)](https://github.com/tcvieira/bm25-exercise-report/blob/main/notebook.ipynb)
+[![google colab link](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tcvieira/bm25-exercise-report/blob/main/notebook.ipynb)
 
 ## app
 
