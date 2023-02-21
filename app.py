@@ -1,3 +1,4 @@
+import subprocess
 import os
 import pickle
 import time
@@ -7,6 +8,8 @@ from bm25Simple import BM25Simple
 
 path = os.path.dirname(__file__)
 print(path)
+print(subprocess.run(['ls -la'], shell=True))
+
 
 def main():
 
