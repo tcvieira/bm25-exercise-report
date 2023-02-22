@@ -4,7 +4,7 @@ Enrollment exercise fot the course "Deep Learning aplicado a sistemas de buscas"
 
 ## report
 
-A brief [report](report.md) describing the implementation details, results, how to test the IR system and how chatGPT helped with the project.
+A brief [report](report.pdf) describing the implementation details, results, how to test the IR system and how chatGPT helped with the project. The markdown version can be found [here](report.md).
 
 ## notebook
 
