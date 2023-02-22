@@ -1,4 +1,5 @@
 import subprocess
+import urllib
 import os
 import pickle
 import time
@@ -140,7 +141,9 @@ def load_docs():
     doc_set = {}
     doc_id = ""
     doc_text = ""
-    with open('./content/CISI.ALL') as f:
+    documents_file, _ = urllib.request.urlretrieve(
+        'https://raw.githubusercontent.com/tcvieira/bm25-exercise-report/main/content/CISI.ALL', 'CISI.ALL.downloaded')
+    with open(documents_file) as f:
         lines = ""
         for l in f.readlines():
             lines += "\n" + l.strip() if l.startswith(".") else " " + l.strip()
@@ -160,18 +163,26 @@ def load_docs():
 
 @st.cache_resource
 def load_models():
-    with open('./models/BM25_simple.pkl', 'rb') as file:
+
+    bm25_simple_file, _ = urllib.request.urlretrieve(
+        'https://github.com/tcvieira/bm25-exercise-report/blob/main/models/BM25_simple.pkl?raw=true', 'bm25_simple_file.downloaded')
+    with open(bm25_simple_file, 'rb') as file:
         bm25_simple: BM25Simple = pickle.load(file)
         print(bm25_simple.corpus_size)
 
-    with open('./models/BM25OKapi.pkl', 'rb') as file:
+    bm25_okapi_file, _ = urllib.request.urlretrieve(
+        'https://github.com/tcvieira/bm25-exercise-report/blob/main/models/BM25Okapi.pkl?raw=true', 'bm25_okapi_file.downloaded')
+    with open(bm25_okapi_file, 'rb') as file:
         bm25_okapi: BM25Okapi = pickle.load(file)
         print(bm25_okapi.corpus_size)
 
-    with open('./models/BM25Plus.pkl', 'rb') as file:
+    bm25_plus_file, _ = urllib.request.urlretrieve(
+        'https://github.com/tcvieira/bm25-exercise-report/blob/main/models/BM25Plus.pkl?raw=true', 'bm25_plus_file.downloaded')
+    with open(bm25_plus_file, 'rb') as file:
         bm25_plus: BM25Plus = pickle.load(file)
         print(bm25_plus.corpus_size)
 
+    print(subprocess.run(['ls -la'], shell=True))
     st.success("BM25 models loaded!", icon='✅')
     return bm25_simple, bm25_okapi, bm25_plus
 
