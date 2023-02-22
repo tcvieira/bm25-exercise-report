@@ -197,6 +197,10 @@ class BM25Simple(object):
 
 ## 6. IR Application
 
+We know that one of the measures of a good search engine is its UI and how the user interact with it alongside with the query language expressiveness and the latency of the response.
+
+Therefore, we build a poc of a search engine interface for our models using [streamlit](https://streamlit.io/). This poc can be accessed on [streamlit cloud](https://tcvieira-bm25-exercise-report-app-41maio.streamlit.app/) or [hugginface spaces](https://huggingface.co/spaces/tcvieira/bm25-information-retrieval).
+
 ## 7. Conclusion
 
 > expose the conclusions
