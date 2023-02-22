@@ -46,7 +46,7 @@
 
 1. **IDF calculation**: In TF-IDF, the inverse document frequency ($IDF$) for a term is calculated as $log(N/df)$, where $N$ is the total number of documents in the corpus and $df$ is the number of documents that contain the term. In BM25, the $IDF$ is calculated as $log((N - df + 0.5) / (df + 0.5))$, which introduces a saturation effect that prevents the IDF from becoming too large for very rare terms or too small for very common terms.
 
-2. **Term frequency normalization**: In TF-IDF, the term frequency ($TF$) of a term in a document is usually normalized by its maximum frequency in the document (i.e., $TF(t,d) / max\{TF(w,d) :$ $w$ in $d\}$). In BM25, the term frequency is normalized using a saturation function that prevents the score from increasing indefinitely with the frequency of the term.
+2. **Term frequency normalization**: In TF-IDF, the term frequency ($TF$) of a term in a document is usually normalized by its maximum frequency in the document (i.e., $TF(t,d) / max\{TF(w,d) : \text{w in d}\}$). In BM25, the term frequency is normalized using a saturation function that prevents the score from increasing indefinitely with the frequency of the term.
 
 3. **Length normalization**: In BM25, the length of the document is taken into account by using a length normalization factor that scales the $TF$ component by the ratio of the average document length to the length of the document. This is done to address the issue of longer documents having higher $TF$ scores than shorter documents, which can bias the ranking towards longer documents.
 
