@@ -193,7 +193,7 @@ class BM25Simple(object):
 
 > in MRR@10
 
-&nbsp;&nbsp;&nbsp;&nbsp;The colab notebook can be found here [![google colab link](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tcvieira/bm25-exercise-report/notebook.ipynb).
+&nbsp;&nbsp;&nbsp;&nbsp;The colab notebook can be found here [![google colab link](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/tcvieira/bm25-exercise-report/blob/main/notebook.ipynb).
 
 ## 6. IR Application
 
